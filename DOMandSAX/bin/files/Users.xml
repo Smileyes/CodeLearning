@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<users>
+	<user id="1" name="张三" password="abcdefg">
+	</user>
+	<user id="2" name="李四" password="1234567">
+	</user>
+	<user id="3" name="王五" password="asdf456">
+	</user>
+</users>

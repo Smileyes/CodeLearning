@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ContactsList> 
+  <contact id="11"> 
+    <name>11</name>  
+    <phone>11</phone> 
+  </contact>  
+  <contact id="2"> 
+    <name>22</name>  
+    <phone></phone> 
+  </contact> 
+</ContactsList>
