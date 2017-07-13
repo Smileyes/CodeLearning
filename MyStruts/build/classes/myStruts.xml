@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+	<aciton name="login" class="com.Smileyes.frame.action.LoignAction"
+		method="login">
+		<result name="success">/index.jsp</result>
+		<result name="failed" type="redirect">/error.jsp
+		</result>
+	</aciton>
+	<aciton name="register" class="com.Smileyes.frame.action.RegisterAction"
+		method="register">
+		<result name="success" type="redirect">/login.jsp
+		</result>
+	</aciton>
+</package>
