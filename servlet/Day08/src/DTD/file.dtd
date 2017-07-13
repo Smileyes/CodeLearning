@@ -1,0 +1,5 @@
+<!ELEMENT contactsList  (contact+)>
+<!ELEMENT contact  (name,password)>
+<!ATTLIST contact  id ID #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT password (#PCDATA)>

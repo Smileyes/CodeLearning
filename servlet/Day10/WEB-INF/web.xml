@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+<context-param>
+	<param-name>asd</param-name>
+	<param-value>asd</param-value>
+</context-param>
+<context-param>
+	<param-name>qwe</param-name>
+	<param-value>qwe</param-value>
+</context-param>
+<context-param>
+	<param-name>zxc</param-name>
+	<param-value>zxc</param-value>
+</context-param>
+  <servlet>
+    <servlet-name>Demo1</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>Demo1</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>Demo2</servlet-name>
+    <servlet-class>Demo2</servlet-class>
+    <init-param>
+    	<param-name>aaa</param-name>
+    	<param-value>aaa</param-value>
+    </init-param>
+    <init-param>
+    	<param-name>bbb</param-name>
+    	<param-value>bbb</param-value>
+    </init-param>
+    <init-param>
+    	<param-name>ccc</param-name>
+    	<param-value>ccc</param-value>
+    	</init-param>
+  </servlet>
+  <servlet>
+    <servlet-name>Demo3</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>Demo3</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Demo41</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>Demo41</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Demo42</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>Demo42</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ForwardServlet</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>ForwardServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RedirectServlet</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>RedirectServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>Demo1</servlet-name>
+    <url-pattern>/Demo1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Demo2</servlet-name>
+    <url-pattern>/Demo2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Demo3</servlet-name>
+    <url-pattern>/Demo3</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Demo41</servlet-name>
+    <url-pattern>/Demo41</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Demo42</servlet-name>
+    <url-pattern>/Demo42</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ForwardServlet</servlet-name>
+    <url-pattern>/Forward</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RedirectServlet</servlet-name>
+    <url-pattern>/Redirect</url-pattern>
+  </servlet-mapping>
+
+</web-app>

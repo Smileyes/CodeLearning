@@ -1,0 +1,12 @@
+<?xml version ="1.0" encoding="utf-8"?>
+<!DOCTYPE contactsList SYSTEM "file.dtd" >
+<contactsList>
+	<contact id="a15">
+		<name>Smile</name>
+		<password>Smile</password>
+	</contact>
+	<contact id="a16">
+		<name>Smile</name>
+		<password>Smile</password>
+	</contact>
+</contactsList>
