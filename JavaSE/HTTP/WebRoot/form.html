@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--用于熟悉GET和POST的区别-->
+<html>
+  <head>
+    <title>表单</title>
+        <meta name="content-type" content="text/html" charset="UTF-8">
+  </head>
+  <body>
+  	<h1>GET方式提交</h1>
+  	<form action="/HTTP/Demo2" method="get">
+  		<span>用户名</span>：<input type="text" name="name"><br/>
+  		<span>密&nbsp;&nbsp;码</span>：<input type="password" name="password"><br/>
+  		<span>性&nbsp;&nbsp;别：</span><input type="radio"name="gender" value="male">男
+  										<input type="radio"name="gender" value="female">女<br/>
+  		<span>城&nbsp;&nbsp;市：</span>
+  		<select name="city">
+  		<option>北京</option>
+  		<option>上海</option>
+  		<option>广州</option>
+  		</select><br/>
+  		<span>专&nbsp;&nbsp;业:</span><input type="checkbox"name="hobby" value="Java"> Java
+  										<input type="checkbox"name="hobby" value="Python"> Python
+  										<input type="checkbox"name="hobby" value="C"> C
+  										<input type="checkbox"name="hobby" value="HTML"> HTML<br/>
+      <span>个人简介：</span><br/>
+      <textarea rows="10" cols="30" name="personal"></textarea><br/>
+      <input type="submit">
+      </form>
+      <hr/>
+      <h1>POST方式提交</h1>
+    <form action="/HTTP/Demo2" method="post">
+      <span>用户名</span>：<input type="text" name="name"><br/>
+      <span>密&nbsp;&nbsp;码</span>：<input type="password" name="password"><br/>
+      <span>性&nbsp;&nbsp;别：</span><input type="radio"name="gender" value="male">男
+                      <input type="radio"name="gender" value="female">女<br/>
+      <span>城&nbsp;&nbsp;市：</span>
+      <select name="city">
+      <option value="Beijing">北京</option>
+      <option value="Shanghai">上海</option>
+      <option value="Gunagzhou">广州</option>
+      </select><br/>
+      <span>专&nbsp;&nbsp;业:</span><input type="checkbox"name="hobby" value="Java"> Java
+                      <input type="checkbox"name="hobby" value="Python"> Python
+                      <input type="checkbox"name="hobby" value="C"> C
+                      <input type="checkbox"name="hobby" value="HTML"> HTML<br/>
+      <span>个人简介：</span><br/>
+      <textarea rows="10" cols="30" name="personal"></textarea><br/>
+      <input type="submit">
+      </form>
+  	</body>
+</html>

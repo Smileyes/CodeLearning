@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+  <servlet>
+    <servlet-name>Demo1</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>Demo1</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Demo2</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>Demo2</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Demo3</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>Demo3</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Demo4</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>Demo4</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Refresh</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>Refresh</servlet-class>
+  </servlet>
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>Demo1</servlet-name>
+    <url-pattern>/Demo1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Demo2</servlet-name>
+    <url-pattern>/Demo2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Demo3</servlet-name>
+    <url-pattern>/Demo3</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Demo4</servlet-name>
+    <url-pattern>/Demo4</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Refresh</servlet-name>
+    <url-pattern>/Refresh</url-pattern>
+  </servlet-mapping>
+
+</web-app>
