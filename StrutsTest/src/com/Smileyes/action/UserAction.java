@@ -5,9 +5,9 @@ import com.Smileyes.service.UserService;
 import com.opensymphony.xwork2.ActionSupport;
 
 /*
- *  用于处理登录的请求
+ *  用于处理关于用户登录/注册的请求
  * */
-public class LoginAction extends ActionSupport {
+public class UserAction extends ActionSupport {
 	private User user;
 
 	public User getUser() {
@@ -22,15 +22,20 @@ public class LoginAction extends ActionSupport {
 
 	// 处理用户登录
 	public String login() {
-		if(user!=null) {
-		System.out.println(user.getName() + ":" + user.getPassword());}
-		else {
-			
+		if (user != null) {
+			System.out.println(user.getName() + ":" + user.getPassword());
+		} else {
+
 		}
 		if (service.login(user)) {
 			return "success";
 		} else {
 			return "failed";
 		}
+	}
+
+	public String register() {
+		service.add(user);
+		return "success";
 	}
 }

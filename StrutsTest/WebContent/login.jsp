@@ -7,7 +7,7 @@
 <title>登录</title>
 </head>
 <body>
-	<form action="${pageContext.servletContext.contextPath}/login"
+	<form action="${pageContext.servletContext.contextPath}/user_login"
 		method="post">
 		用户名：<input type="text" name="user.name"> <br />
 		密&nbsp;&nbsp;&nbsp;码：<input type="password" name="user.password"><br />
