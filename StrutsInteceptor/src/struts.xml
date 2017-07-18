@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<include file="constant.xml"></include>
+	<package name="Smileyes" namespace="/" extends="struts-default">
+		<interceptors>
+			<!--自定义拦截器 -->
+			<interceptor name="list"
+				class="com.Smileyes.interceptor.ListInterceptor"></interceptor>
+			<!-- 自定义拦截器栈 -->
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="list"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 使用自定义拦截器栈 -->
+		<default-interceptor-ref name="myStack" />
+
+		<global-results>
+			<result name="success">/WEB-INF/list.jsp</result>
+		</global-results>
+		<action name="login" class="com.Smileyes.action.UserAction"
+			method="login">
+			<result name="failed">/error.jsp</result>
+		</action>
+		<action name="list" class="com.Smileyes.action.UserAction"
+			method="list">
+			<result name="failed">/login.jsp</result>
+		</action>
+
+	</package>
+</struts>
+
