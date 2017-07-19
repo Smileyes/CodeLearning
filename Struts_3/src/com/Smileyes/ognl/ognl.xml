@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="Smileyes" namespace="/" extends="struts-default">
+		<action name="demo2" class="com.Smileyes.ognl.ActionDemo2"
+			method="execute">
+			<result name="success">/ognl.jsp?name=${name}</result>
+		</action>
+		<action name="demo3" class="com.Smileyes.ognl.ActionDemo3"
+			method="execute">
+			<result name="list">/list.jsp</result>
+		</action>
+	</package>
+</struts>
+
