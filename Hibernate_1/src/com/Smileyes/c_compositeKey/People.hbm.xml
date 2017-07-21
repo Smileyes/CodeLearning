@@ -1,0 +1,13 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.Smileyes.c_compositeKey">
+	<class name="People">
+		<!--配置关联主键 -->
+		<composite-id name="compositeKeys">
+			<key-property name="name" type="string" length="200"></key-property>
+			<key-property name="address" type="string" length="200"></key-property>
+		</composite-id>
+		<property name="age" type="int" length="200" />
+	</class>
+</hibernate-mapping>
