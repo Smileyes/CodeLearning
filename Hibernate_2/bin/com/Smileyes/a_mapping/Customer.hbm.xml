@@ -1,0 +1,40 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.Smileyes.a_mapping">
+	<class name="Customer">
+		<!--主键的映射 -->
+		<id name="id" column="id">
+			<generator class="native" />
+		</id>
+		<!-- 其它属性的映射 -->
+		<property name="name" type="string" length="20">
+			<column name="name" />
+		</property>
+		<!-- Set集合
+		 name：goods集合属性
+		  key：good_id外键在goods表中的名称 
+		  element：goodName goods表中的其它字段 
+		  
+		<set name="goods" table="goods">
+			<key column="cust_id"></key>
+			<element column="goodName" type="string"></element>
+		</set>
+		-->
+		
+		<!-- List集合需要添加一个list—index属性，实现List的排序
+		<list name="goods" table="goods">
+			<key column="custId"></key>
+			<list-index column="id" base="1"></list-index>
+		 	<element column="goodName" type="string"></element>
+		</list> -->
+		
+		
+		<!--Map集合需要设置map—key属性 -->
+		<map name="goods" table="goods">
+			<key column="custId"></key>
+			<map-key column="goodId" type="int"></map-key>
+			<element column="goodName" type="string"></element>
+		</map>
+	</class>
+</hibernate-mapping>

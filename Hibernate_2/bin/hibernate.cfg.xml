@@ -1,0 +1,33 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<!-- 3.编写主配置文件 -->
+<hibernate-configuration>
+
+	<session-factory>
+		<!-- JDBC-MySQL连接URL -->
+		<property name="connection.url">jdbc:mysql:///study</property>
+		<!-- JDBC-MySQL连接数据库的用户名 -->
+		<property name="connection.username">Smileyes</property>
+		<!-- JDBC-MySQL连接数据库的密码 -->
+		<property name="connection.password">123456</property>
+		<!-- JDBC-MySQL连接数据库的驱动名称 -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<!-- 数据库方言 -->
+		<property name="dialect">org.hibernate.dialect.MySQL57Dialect</property>
+		<!-- 自动建表配置 -->
+		<property name="hibernate.hbm2ddl.auto">create</property>
+		<!-- 显示Hibernate的调试SQL语句 -->
+		<property name="hibernate.show_sql">true</property>
+		<!--sql语句格式化 -->
+		<property name="hibernate.format_sql">flase</property>
+
+		<!-- 加载项目中的映射配置文件 -->
+		<!-- <mapping resource="com/Smileyes/b_one2many/Employee.hbm.xml" />
+		<mapping resource="com/Smileyes/b_one2many/Dept.hbm.xml" /> -->
+		
+		<mapping resource="com/Smileyes/c_many2many/Student.hbm.xml" />
+		<mapping resource="com/Smileyes/c_many2many/Teacher.hbm.xml" />
+	</session-factory>
+
+</hibernate-configuration>
