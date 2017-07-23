@@ -1,0 +1,20 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.Smileyes.c_component">
+	<class name="Car" table="car">
+		<!--主键的映射 -->
+
+		<id name="id">
+			<generator class="native" />
+		</id>
+
+		<!-- 其它属性的映射 -->
+		<property name="name" type="string" length="20"></property>
+		<!--组件映射：采用component标签，property定义了Wheel类的属性 -->
+		<component name="wheels" class="Wheel">
+			<property name="num" column="num"></property>
+			<property name="typeName" column="wheelTpye"></property>
+		</component>
+	</class>
+</hibernate-mapping>

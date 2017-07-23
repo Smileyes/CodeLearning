@@ -1,0 +1,20 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.Smileyes.a_one2one_2">
+	<class name="IdCard">
+		<!--主键的映射 -->
+
+		<id name="person_id">
+			<generator class="foreign">
+				<param name="property">person</param>
+			</generator>
+		</id>
+
+		<!-- 其它属性的映射 -->
+		<property name="cardNum" type="string" length="20"></property>
+		<property name="address" type="string" length="20" />
+		<one-to-one name="person" cascade="save-update" class="Person"
+			constrained="true"></one-to-one>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.Smileyes.d_extends_1">
+	<!-- 简单继承映射： -->
+	<!-- 直接写出子类的xml映射文档， -->
+	<!-- 将父类的属性当作子类的属性，直接编写 -->
+
+	<class name="Cat" table="cat">
+		<!--主键的映射 -->
+
+		<id name="id">
+			<generator class="native" />
+		</id>
+
+		<!-- 其它属性的映射 -->
+		<property name="name" type="string" length="20"></property>
+		<property name="hairColor" type="string" length="20"></property>
+		<property name="food" type="string" length="20"></property>
+
+	</class>
+</hibernate-mapping>

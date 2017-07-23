@@ -1,0 +1,16 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.Smileyes.a_one2one_1">
+	<class name="Person">
+		<!--主键的映射 -->
+		<id name="id" column="id">
+			<generator class="native" />
+		</id>
+		<!-- 其它属性的映射 -->
+		<property name="name" type="string" length="20">
+			<column name="name"></column>
+		</property>
+		<one-to-one name="idCard" class="IdCard"></one-to-one>
+	</class>
+</hibernate-mapping>

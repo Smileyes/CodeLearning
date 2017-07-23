@@ -1,0 +1,31 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.Smileyes.e_extends_2">
+	<!-- 将每个子类映射映射到一张表： -->
+	<!-- 编写父类的xml映射文件， -->
+	<!--主键的字段，不能使用自增长 -->
+	<!-- 用component标签，property定义了Wheel类的属性 -->
+
+	<class name="Animal" abstract="true">
+		<!--主键的映射 -->
+
+		<id name="id">
+			<generator class="uuid"></generator>
+		</id>
+
+		<!-- 其它属性的映射 -->
+		<property name="name" type="string" length="20"></property>
+		<!--映射子类 -->
+		<union-subclass name="Cat" table="cat">
+			<property name="hairColor" column="color"></property>
+			<property name="food" column="food"></property>
+		</union-subclass>
+
+		<union-subclass name="Monkey" table="monkey">
+			<property name="length" column="high" type="double"></property>
+			<property name="fruit" column="fruit" type="string"></property>
+		</union-subclass>
+
+	</class>
+</hibernate-mapping>
