@@ -1,0 +1,24 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.Smileyes.a_Query">
+	<class name="Dept" table="dept">
+		<!--主键的映射 -->
+		<id name="id" column="id">
+			<generator class="native" />
+		</id>
+		<!-- 其它属性的映射 -->
+		<property name="name" type="string">
+			<column name="name" />
+		</property>
+		<set name="emps">
+			<key column="deptId"></key>
+			<one-to-many class="Employee"></one-to-many>
+		</set>
+
+	</class>
+	<query name="getAllQuery">
+	<![CDATA[from Employee e where e.id >? ]]>
+		<!-- from Employee -->
+	</query>
+</hibernate-mapping>

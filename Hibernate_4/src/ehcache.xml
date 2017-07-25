@@ -1,0 +1,16 @@
+<ehcache>
+	<!-- 设置缓存保存目录 -->
+	<diskStore path="java.io.tmpdir" />
+	<!-- 默认缓存数据过期策略 maxElementsInMemory：缓存对象的最大数目; eternal：缓存是否永不过期; timeToIdleSeconds：缓存的最大空闲时间(s); 
+		timeToLiveSeconds：对象处于缓存状态的最大时间; overflowToDisk:内存溢出时是否将溢出对象写入硬盘; -->
+	<defaultCache maxElementsInMemory="10000" eternal="true"
+		timeToIdleSeconds="120" timeToLiveSeconds="120" overflowToDisk="true" />
+	<!--自定义缓存数据过期策略 -->
+	<cache name="sampleCache1" maxElementsInMemory="10000" eternal="true"
+		timeToIdleSeconds="300" timeToLiveSeconds="600" overflowToDisk="true" />
+	<cache name="org.hibernate.cache.internal.StandardQueryCache"
+		maxElementsInMemory="50" eternal="false" timeToIdleSeconds="3600"
+		timeToLiveSeconds="7200" overflowToDisk="true"></cache>
+	<cache name="org.hibernate.cache.internal.UpdateTimestampsCache"
+		maxElementsInMemory="5000" eternal="true" overflowToDisk="true" />
+</ehcache>
