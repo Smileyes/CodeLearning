@@ -1,0 +1,20 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.Smileyes.entity">
+	<class name="Employee">
+		<!--主键的映射 -->
+		<id name="id" column="id">
+			<generator class="native" />
+		</id>
+		<!-- 其它属性的映射 -->
+		<property name="name" type="string" unique="true">
+			<column name="name" />
+		</property>
+		<property name="password" type="string">
+			<column name="password" />
+		</property>
+		<many-to-one name="dept" class="Dept" column="deptId"
+			cascade="save-update" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,59 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<!-- 3.编写主配置文件 -->
+<hibernate-configuration>
+
+	<session-factory>
+		<!-- JDBC-MySQL连接URL -->
+		<property name="connection.url">jdbc:mysql:///study</property>
+		<!-- JDBC-MySQL连接数据库的用户名 -->
+		<property name="connection.username">Smileyes</property>
+		<!-- JDBC-MySQL连接数据库的密码 -->
+		<property name="connection.password">123456</property>
+		<!-- JDBC-MySQL连接数据库的驱动名称 -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<!-- 数据库方言 -->
+		<property name="dialect">org.hibernate.dialect.MySQL57Dialect</property>
+		<!-- 自动建表配置 -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<!-- 显示Hibernate的调试SQL语句 -->
+		<property name="hibernate.show_sql">true</property>
+		<!--sql语句格式化 -->
+		<property name="hibernate.format_sql">true</property>
+		<!-- 连接池配置 -->
+		<!-- 选择C3P0连接池 -->
+		<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+		<!-- 配置C3P0连接池 -->
+		<property name="hibernate.c3p0.max_size">4</property>
+		<property name="hibernate.c3p0.min_size">2</property>
+		<property name="hibernate.c3p0.timeout">5000</property>
+		<property name="hibernate.c3p0.max_statements ">100</property>
+		<property name="hibernate.c3p0.idle_test_period">3000</property>
+		<property name="hibernate.c3p0.acquire_increment">2</property>
+		<property name="hibernate.c3p0.validate">false</property>
+		<!-- 加载项目中的映射配置文件 -->
+
+		<!-- 配置二级缓存 -->
+		<!-- 开启二级缓存 -->
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+		<!--开启查询缓存 -->
+		<property name="hibernate.cache.use_query_cache">true</property>
+		<!-- 指定缓存数据过期策略 -->
+		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+		<!-- 以更人性化的形式缓存数据 -->
+		<property name="hibernate.cache.use_structured_entries">true</property>
+
+		<property name="current_session_context_class">thread</property>
+		<!-- 配置映射 -->
+		<mapping resource="com/Smileyes/entity/Employee.hbm.xml" />
+		<mapping resource="com/Smileyes/entity/Dept.hbm.xml" />
+		<!-- 设置缓存的类 -->
+		<class-cache usage="read-write" class="com.Smileyes.entity.Employee" />
+		<class-cache usage="read-write" class="com.Smileyes.entity.Dept" />
+		<collection-cache usage="read-write"
+			collection="com.Smileyes.entity.Dept.emps" />
+
+	</session-factory>
+
+</hibernate-configuration>

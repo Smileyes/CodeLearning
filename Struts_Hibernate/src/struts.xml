@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<include file="constant.xml"></include>
+	<package name="Smileyes" extends="struts-default">
+		<interceptors>
+			<interceptor name="MySession"
+				class="com.Smileyes.interceptor.SessionInterceptor"></interceptor>
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="MySession" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myStack" />
+		<action name="emp_*" class="com.Smileyes.action.LoginAction"
+			method="{1}">
+			<result name="login" type="redirect">/login.jsp</result>
+			<result name="list">/WEB-INF/list.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="register">/register.jsp</result>
+			<result name="detail">/detail.jsp</result>
+			<result name="viewUpdate">/detail.jsp</result>
+		</action>
+
+	</package>
+</struts>
+
