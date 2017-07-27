@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+    ">
+	<!-- 默认为单例,默认使用无参的构造器，添加construtor-arg,则使用有参的构造器 -->
+	<bean class="com.Smileyes.a_bean.User" scope="singleton"
+		init-method="init_user" destroy-method="destroy_user" id="user" name="test">
+		<constructor-arg name="id" value="100" type="int"></constructor-arg>
+		<constructor-arg name="name" value=" Tom" type="java.lang.String"></constructor-arg>
+	</bean>
+</beans>
+  

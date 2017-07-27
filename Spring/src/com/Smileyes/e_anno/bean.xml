@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+    ">
+	<!-- 开启注解扫描 -->
+	<context:component-scan base-package="com.Smileyes.e_anno"></context:component-scan>
+	<!-- 配置bean对象 多例 -->
+	<bean id="user" class="com.Smileyes.e_anno.User" scope="prototype">
+		<constructor-arg name="id" value="100"></constructor-arg>
+		<constructor-arg name="name" value="Tom"></constructor-arg>
+	</bean>
+	<!-- 配置dao 单例 -->
+	<bean id="userDao" class="com.Smileyes.e_anno.UserDao">
+	</bean>
+	<!-- 配置service 单例 -->
+	<bean name="userService" class="com.Smileyes.e_anno.UserService">
+	</bean>
+	<!-- 配置Action 多例 -->
+	<bean name="userAction" class="com.Smileyes.e_anno.UserAction" scope="prototype" />
+</beans>
