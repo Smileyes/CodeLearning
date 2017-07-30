@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<!-- 3.编写主配置文件 -->
+<hibernate-configuration>
+
+	<session-factory>
+		<!-- JDBC-MySQL连接URL -->
+		<property name="connection.url">jdbc:mysql:///study</property>
+		<!-- JDBC-MySQL连接数据库的用户名 -->
+		<property name="connection.username">Smileyes</property>
+		<!-- JDBC-MySQL连接数据库的密码 -->
+		<property name="connection.password">123456</property>
+		<!-- JDBC-MySQL连接数据库的驱动名称 -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<!-- 数据库方言 -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<!-- 自动建表配置 -->
+		<property name="hibernate.hbm2ddl.auto">
+			update</property>
+		<!-- 显示Hibernate的调试SQL语句 -->
+		<property name="hibernate.show_sql">true</property>
+		<!--sql语句格式化 -->
+		<property name="hibernate.format_sql">true</property>
+
+		<!-- *********连接池配置********* -->
+		<!-- 选择C3P0连接池 -->
+		<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+		<!-- 配置C3P0连接池 -->
+		<property name="hibernate.c3p0.max_size">4</property>
+		<property name="hibernate.c3p0.min_size">2</property>
+		<property name="hibernate.c3p0.timeout">5000</property>
+		<property name="hibernate.c3p0.max_statements ">100</property>
+		<property name="hibernate.c3p0.idle_test_period">3000</property>
+		<property name="hibernate.c3p0.acquire_increment">2</property>
+		<property name="hibernate.c3p0.validate">false</property>
+
+
+		<!-- 加载项目中的映射配置文件 -->
+
+		<mapping resource="com/Smileyes/entity/Dept.hbm.xml" />
+		<mapping resource="com/Smileyes/entity/Employee.hbm.xml" />
+	</session-factory>
+
+</hibernate-configuration>
