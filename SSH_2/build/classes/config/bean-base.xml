@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+	<!-- 1.数据源配置 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/study"></property>
+		<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+		<property name="user" value="Smileyes"></property>
+		<property name="password" value="123456"></property>
+		<property name="initialPoolSize" value="3"></property>
+		<property name="maxPoolSize" value="6"></property>
+		<property name="acquireIncrement" value="1"></property>
+		<property name="checkoutTimeout" value="3000" />
+		<property name="maxIdleTime" value="5000" />
+	</bean>
+	<!-- 2.sessionFactory配置 -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<!-- Hibernate配置 -->
+		<property name="hibernateProperties">
+			<props>
+				<prop key="dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+		<!-- 映射配置 -->
+		<property name="mappingLocations">
+			<list>
+				<value>classpath:com/Smileyes/entity/*.hbm.xml
+				</value>
+			</list>
+		</property>
+	</bean>
+	<!-- 3.1事务管理器类 -->
+	<bean id="txManeger"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 3.2事务增强 -->
+	<tx:advice id="txAdvice" transaction-manager="txManeger">
+		<tx:attributes>
+			<tx:method name="get*" read-only="true" />
+			<tx:method name="find*" read-only="true" />
+			<tx:method name="*" read-only="false" />
+		</tx:attributes>
+	</tx:advice>
+	<!-- 3.3AOP配置 -->
+	<aop:config>
+		<aop:pointcut expression="execution(* com.Smileyes.service.impl.*.*(..))"
+			id="pt" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="pt" />
+	</aop:config>
+</beans>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="devMode" value="true"></constant>
+	<package name="Smileyes" extends="struts-default">
+		<!-- 全局视图 -->
+		<global-results>
+			<result name="goToList" type="redirectAction">emp_list</result>
+		</global-results>
+		<!-- 错误视图 -->
+		<global-exception-mappings>
+			<exception-mapping result="error" exception="java.lang.Exception">/error.jsp
+			</exception-mapping>
+		</global-exception-mappings>
+		<action name="emp_*" class="com.Smileyes.action.EmployeeAction"
+			method="{1}">
+			<result name="list">/WEB-INF/list.jsp</result>
+			<result name="add">/WEB-INF/add.jsp</result>
+			<result name="edit">/WEB-INF/edit.jsp</result>
+			<result name="detail">/WEB-INF/detail.jsp</result>
+		</action>
+		<action name="adm_*" class="com.Smileyes.action.AdminAction" method="{1}">
+			<result name="loginFailed">/loginFail.jsp</result>
+			<result name="login">/login.jsp</result>
+		</action>
+	</package>
+</struts>
