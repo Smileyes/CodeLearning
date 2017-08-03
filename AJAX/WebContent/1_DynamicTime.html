@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>动态时间</title>
+<link href="head.ico" type="image/x-icon" rel="shortcut icon">
+</head>
+<script type="text/javascript">
+	window.setInterval("showTime()", "1000");
+	function showTime() {
+		var timeElement = document.getElementById("nowTime");
+		timeElement.innerHTML = new Date().toLocaleString();
+	}
+</script>
+
+<body>
+	当前时间：<br>
+	<span id="nowTime"></span>
+</body>
+</html>
