@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="proCity.bean">
+	<class name="City">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="name" length="20"></property>
+		<many-to-one name="province" class="Province" lazy="false">
+			<column name="proId"></column>
+		</many-to-one>
+		<set name="areas" lazy="false" >
+			<key column="cityId"></key>
+			<one-to-many class="Area" />
+		</set>
+	</class>
+</hibernate-mapping>
