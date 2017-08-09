@@ -1,0 +1,69 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	<table border="1" align="center">
+		<thead>
+			<tr>
+				<th>状态</th>
+				<th>用户名</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><input type="checkbox" /></td>
+				<td>赵</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" /></td>
+				<td>钱</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" /></td>
+				<td>孙</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" /></td>
+				<td>李</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" /></td>
+				<td>周</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td><input type="checkbox" id="checkAll" /> 全选</td>
+				<td><input type="button" value="全反选" /></td>
+			</tr>
+		</tfoot>
+	</table>
+	<script type="text/javascript">
+		//全选中和全取消
+
+		$("tfoot input:checkbox").click(function() {
+			if ($(this).prop("checked")) {
+				$("tbody input:checkbox").prop("checked", true);
+			} else {
+				$("tbody  input:checkbox").prop("checked",false);
+			}
+		});
+	</script>
+	<script type="text/javascript">
+		//全反选
+		$("tfoot input:button").click(function() {
+			var $cb = $("tbody input:checkbox:checked");
+			var $ucb = $("tbody input:checkbox:not(:checked)");
+			$cb.prop("checked",false);
+			$ucb.prop("checked", "true");
+		});
+	</script>
+
+</body>
+</html>
+
+
+

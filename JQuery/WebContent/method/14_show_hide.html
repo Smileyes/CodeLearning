@@ -1,0 +1,38 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	<button>隐藏图片</button>
+	<p>
+		<!-- 
+		<img src="../images/zgl.jpg" style="display:none"/>
+		 -->
+		<img src="../images/zgl.jpg" />
+	</p>
+	<div>
+		<!-- 加载完毕 -->
+	</div>
+
+	<script type="text/javascript">
+		$(":button").click(function() {
+			if ($(this).text() == "隐藏图片") {
+				//图片隐蔽
+				$("img").hide("fast");
+				$(this).text("显示图片");
+			} else {
+				//图片显示
+				$("img").show("slow");
+				$(this).text("隐藏图片");
+
+			}
+		});
+	</script>
+
+</body>
+</html>
+
+
+

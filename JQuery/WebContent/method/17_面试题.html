@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	/* function myclick() {
+		var $tr = $("table tr:not(:last):even");
+		$tr.each(function() {
+			var $td = $(this).children();
+			$td.each(function() {
+				alert($(this).text());
+			});
+		});
+	} */
+	//写出另一种方式，比第一种更加easy
+	function myclick() {
+		var $td = $("table tr:not(:last):even td");
+		$td.each(function() {
+			alert($(this).text());
+		});
+	}
+</script>
+</head>
+<body>
+	<table border="2" align="center" width="30%">
+		<tr>
+			<td>A1</td>
+			<td>A2</td>
+			<td>A3</td>
+		</tr>
+		<tr>
+			<td>B1</td>
+			<td>B2</td>
+			<td>B3</td>
+		</tr>
+		<tr>
+			<td>C1</td>
+			<td>C2</td>
+			<td>C3</td>
+		</tr>
+		<tr>
+			<td>D1</td>
+			<td>D2</td>
+			<td>D3</td>
+		</tr>
+		<tr>
+			<td colspan="3" align="center"><input type="button"
+				value="  测  试  " onclick="myclick()" /></td>
+		</tr>
+	</table>
+</body>
+</html>
+
+
+
+

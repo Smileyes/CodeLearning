@@ -1,0 +1,34 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+.myClass {
+	color: inactivecaption
+}
+</style>
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	<table border="1" align="center">
+		<tr>
+			<th>用户名</th>
+			<td><input type="text" value="输入用户名" id="name" /></td>
+		</tr>
+	</table>
+
+	<script type="text/javascript">
+		//打开后选中
+		$($(":text").focus().select()).css("imeMode ", "disabled");
+
+		//输入时检查是否输入了中文或空格字符
+		$(":text").bind("input", function() {
+			this.value = this.value.replace(/[\u4e00-\u9fa5|\s]+/, "");
+		});
+	</script>
+
+</body>
+</html>
+
+
+

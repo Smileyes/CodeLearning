@@ -1,0 +1,68 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	<table id="tableID" border="1" align="center" width="60%">
+		<thead>
+			<tr>
+				<th>用户名</th>
+				<th>密码</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody id="tbodyID">
+			<!-- 动态增加行  -->
+		</tbody>
+	</table>
+
+	<hr />
+	用户名：
+	<input type="text" id="usernameID" /> 密码：
+	<input type="text" id="passwordID" />
+	<input type="button" value="增加" id="addID" />
+
+</body>
+
+
+<script type="text/javascript">
+	// 判断用户名是否合格:非空，由中文、字母或数字组成
+	function userName(str) {
+		return ((str.length != 0) && (/^[\u4e00-\u9fa5|\w]+$/.test(str)));
+	}
+	//判断密码是否合格：非空，由字母或者数字组成
+	function userPwd(str) {
+		return ((str.length != 0) && (/^\w+$/.test(str)));
+	}
+	//定位"增加"按钮，同时添加单击事件
+	$("#addID").click(function() {
+		var nameValue = $("#usernameID").val();
+		var pwdValue = $("#passwordID").val();
+		if (userName(nameValue) & userPwd(pwdValue)) {
+			//添加一行表格
+			var $tr = $("<tr></tr>");
+			var $td1 = $("<td></td>").text(nameValue);
+			var $td2 = $("<td></td>").text(pwdValue);
+			var $td3 = $("<td></td>");
+			var $button = $("<input type='button' value='删除' class='doDelete'>");
+			$td3.append($button);
+			//删除功能
+			$button.click(function(){
+				$tr.remove();
+			}); 
+			$tr.append($td1).append($td2).append($td3);
+			//居中
+			$tr.css("textAlign","center");
+			//显示
+			var $tbody = $("#tbodyID").append($tr);		
+		} else {
+			alert("信息未填写或格式错误");
+		}
+	});
+</script>
+</html>
+
+
+

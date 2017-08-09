@@ -1,0 +1,43 @@
+﻿<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+	</head>
+	<body>
+		<form>
+			<table>				
+				<tr>
+					<td>
+						哈哈
+					</td>
+					<td>
+						张三
+					</td>
+				</tr>
+				<tr>
+					<td>
+						细细
+					</td>
+				</tr>
+			</table>
+			<table>				
+				<tr>
+					<td>
+						笨笨
+					</td>
+				</tr>
+			</table>
+		</form>
+		
+		<script type="text/javascript">
+			//获取"张三"
+			alert($("form table:first tr:first td:eq(1)").text());
+		</script>
+		
+	</body>
+</html>
+
+
+
+
+
