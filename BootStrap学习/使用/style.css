@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+
+#search form {
+    display: block;
+}
+header {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #ddd;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>提示工具</title>
+</head>
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+<body style="padding: 50px;">
+    <div class="container">
+        <!-- 采用data-toggle方式触发 -->
+        <a href="#" data-toggle="tooltip" title="这是一个例子" data-placement="left">data-toggle方式</a>
+        <br>
+        <!-- 采用js方式触发 -->
+        <a href="#" title="这是一个例子" id="jsType">JS方式</a>
+        <div>
+            <a href="#" data-toggle="tooltip" title="这是一个例子" data-placement="top">上面</a>
+            <a href="#" data-toggle="tooltip" title="这是一个例子" data-placement="bottom">下面</a>
+            <a href="#" data-toggle="tooltip" title="这是一个例子" data-placement="left">左边</a>
+            <a href="#" data-toggle="tooltip" title="这是一个例子" data-placement="right">右边</a>
+        </div>
+        <div>
+            <button href="#" data-toggle="tooltip" title="这是一个例子" data-placement="top">上面</button>
+            <button href="#" data-toggle="tooltip" title="这是一个例子" data-placement="bottom">下面</button>
+            <button href="#" data-toggle="tooltip" title="这是一个例子" data-placement="left">左边</button>
+            <button href="#" data-toggle="tooltip" title="这是一个例子" data-placement="right">右边</button>
+        </div>
+        <a href="#" data-toggle="tooltip" title="
+           <h2>这是一个options实例</h2>" id="options">options实例</a>
+        <a href="#" data-toggle="tooltip" title="
+           <h2>这是一个事件实例</h2>" id="message">触发事件</a>
+    </div>
+</body>
+<script type="text/javascript">
+$(function(){
+	$("#jsType").tooltip("show");
+});
+//使用JS，为每一个提示工具添加样式；html代表提示中可以出现html语句
+$(function() {
+    $("[data-toggle='tooltip']").tooltip({
+        html: true, delay: { show: 500, hide: 100 }
+    })
+});
+// //options实例
+// $(function() {
+//     $("#options").tooltip({ html: true });
+// });
+
+//触发事件
+$(function() {
+    $("#message").on('show.bs.tooltip', function() {
+        alert("Alert message on show");
+    });
+});
+</script>
+
+</html>

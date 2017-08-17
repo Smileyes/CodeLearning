@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>模态框</title>
+</head>
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+<body>
+    <div class="container">
+        <h2>创建模态框（Modal）</h2>
+        <!-- 按钮触发模态框 -->
+        <button class="btn btn-lg" data-toggle="modal" data-target="#myModal" id="modalButton">开始演示模态框</button>
+        <!-- 模态框（Modal） -->
+        <div class="modal  fade" id="myModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close" data-dismiss="modal">&times;</span>
+                        <h4><center>请登录</center></h4>
+                    </div>
+                    <form class="form-inline" role="form" action="https://www.baidu.com/s"   target="_blank" method="get">
+                        <div class="modal-body text-center">
+                            <div class="form-group form-inline">
+                                <label for="name">用户名</label>
+                                <input type="text" placeholder="请输入用户名" width="100%" class="input-lg form-control">
+                            </div>
+                            <div class="form-group form-inline">
+                                <label for="password">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+                                <input type="text" placeholder="请输入用户名" width="100%" class="input-lg form-control" name="wd">
+                            </div>
+                            <p >你可以访问<a href="http://www.baidu.com" target="_blank">百度</a>，以获得最新的技术支持。</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-default" data-dismiss="modal">关闭</button>
+                            <button class="btn btn-primary"  type="submit">登录</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+        <!-- /.modal -->
+    </div>
+    <script>
+    $('#myModal').on('show.bs.modal', function() {
+        alert("模态框启动");
+    });
+
+    $('#myModal').on('shown.bs.modal', function() {
+        alert("模态框出现");
+    });
+    $('#myModal').on('hide.bs.modal', function() {
+        alert("模态框开始消失");
+    });
+    $('#myModal').on('hidden.bs.modal', function() {
+        alert("模态框不见了");
+    });
+    $('#myModal').modal({
+        keyboard: true, //ESC键是否能够退出模态框
+        backdrop: false, //是否能够使用鼠标点击空白区域返回
+        show: false, //初始化时是否显示模态框
+        remote: '123465'
+    })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>标题</title>
+</head>
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+<body>
+    <div class="container">
+        <ul class="nav nav-tabs nav-justified" id="myTab">
+            <li class="active">
+                <!-- 用data-toggle="tab"实现跳转 -->
+                <a href="#home" data-toggle="tab">主页</a></li>
+            <li><a href="#scenery" data-toggle="tab">景点介绍</a></li>
+            <li><a href="#ticket" data-toggle="tab">票务信息</a></li>
+            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">旅游社区<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#qjj" data-toggle="tab">将进酒</a></li>
+                    <li><a href="#kjl" data-toggle="tab">空寂寥</a></li>
+                    <li><a href="#cxs" data-toggle="tab">长相思</a></li>
+                </ul>
+            </li>
+            <li><a href="#about">公司信息</a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+                <h3>首页</h3>
+                <p>欢迎来到首页</p>
+            </div>
+            <div id="scenery" class="tab-pane fade">
+                <h3>风景</h3>
+                <p>江山如画，一时多少豪杰？</p>
+            </div>
+            <div id="ticket" class="tab-pane fade">
+                <h3>票务</h3>
+                <p>车水马龙，摩肩接踵</p>
+            </div>
+            <div id="qjj" class="tab-pane fade">
+                <h3>将进酒</h3>
+                <p>与君歌一曲，请君为我亲耳听。</p>
+            </div>
+            <div id="kjl" class="tab-pane fade">
+                <h3>空寂寥</h3>
+                <p>商女不知亡国恨，隔江犹唱后庭花。</p>
+            </div>
+            <div id="cxs" class="tab-pane fade">
+                <h3>长相思</h3>
+                <p>自古多情空余恨，此恨绵绵无绝期。</p>
+            </div>
+            <div id="about" class="tab-pane fade">
+                <h3>公司信息</h3>
+                <p>不积跬步，无以至千里。</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+//用js实现跳转
+$("a").click(function() {
+    $(this).tab('show');
+});
+//标签触发事件：显示前：show.bs.tab；显示后：shown.bs.tab
+$('#myTab li>a').on('show.bs.tab', function (e) {
+ alert("当前项："+$(e.target).text()); // 激活的标签页
+  alert("前一项："+$(e.relatedTarget).text()); // 前一个激活的标签页
+})
+</script>
+
+</html>

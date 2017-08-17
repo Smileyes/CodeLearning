@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>标题</title>
+</head>
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+<body>
+    <div>
+        <h1>1.标签式</h1>
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#">主页</a></li>
+            <li><a href="#">景点介绍</a></li>
+            <li><a href="#">票务信息</a></li>
+            <li><a href="#">旅游社区</a></li>
+            <li><a href="#">公司信息</a></li>
+        </ul>
+    </div>
+    <div>
+        <h1>2.胶囊式</h1>
+        <ul class="nav nav-pills">
+            <li class="active"><a href="#">主页</a></li>
+            <li><a href="#">景点介绍</a></li>
+            <li><a href="#">票务信息</a></li>
+            <li><a href="#">旅游社区</a></li>
+            <li><a href="#">公司信息</a></li>
+        </ul>
+    </div>
+    <div>
+        <h1>3.垂直的胶囊式</h1>
+        <ul class="nav nav-pills nav-stacked">
+            <li class="active"><a href="#">主页</a></li>
+            <li><a href="#">景点介绍</a></li>
+            <li><a href="#">票务信息</a></li>
+            <li><a href="#">旅游社区</a></li>
+            <li><a href="#">公司信息</a></li>
+        </ul>
+    </div>
+    <div>
+        <h1>4.两端对齐式</h1>
+        <ul class="nav nav-pills nav-justified">
+            <li class="hidden-xs"><a href="#">主页</a></li>
+            <li><a href="#">景点介绍</a></li>
+            <li class="active"><a href="#">票务信息</a></li>
+            <li><a href="#">旅游社区</a></li>
+            <li><a href="#">公司信息</a></li>
+        </ul>
+        <hr>
+        <ul class="nav nav-tabs nav-justified">
+            <li class="hidden-xs"><a href="#">主页</a></li>
+            <li><a href="#">景点介绍</a></li>
+            <li class="active"><a href="#">票务信息</a></li>
+            <li><a href="#">旅游社区</a></li>
+            <li><a href="#">公司信息</a></li>
+        </ul>
+    </div>
+    <div>
+        <h1>5.禁用链接</h1>
+        <ul class="nav nav-pills nav-justified">
+            <li class="hidden-xs"><a href="#">主页</a></li>
+            <li class="disabled "><a href="#">景点介绍</a></li>
+            <li class="active"><a href="#">票务信息</a></li>
+            <li><a href="#">旅游社区</a></li>
+            <li><a href="#">公司信息</a></li>
+        </ul>
+    </div>
+    <div>
+        <h1>6.下拉菜单标签式</h1>
+        <ul class="nav nav-tabs">
+            <li class="hidden-xs"><a href="#">主页</a></li>
+            <li>
+                <a class="dropdown-toggle" data-toggle="dropdown">景点介绍
+                    	<span class="caret"></span>
+                    </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li role="presentation"><a href="#">泰山</a></li>
+                    <li role="presentation"><a href="#">衡山</a></li>
+                    <li role="presentation"><a href="#">恒山</a></li>
+                    <li role="presentation"><a href="#">嵩山</a></li>
+                    <li role="presentation"><a href="#">华山</a></li>
+                </ul>
+            </li>
+            <li class="active"><a href="#">票务信息</a></li>
+            <li><a href="#">旅游社区</a></li>
+            <li><a href="#">公司信息</a></li>
+        </ul>
+    </div>
+    <div>
+        <h1>7.下拉菜单胶囊式</h1>
+        <ul class="nav nav-pills">
+            <li class="hidden-xs"><a href="#">主页</a></li>
+            <li>
+                <a class="dropdown-toggle" data-toggle="dropdown">景点介绍
+                    	<span class="caret"></span>
+                    </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li role="presentation"><a href="#">泰山</a></li>
+                    <li role="presentation"><a href="#">衡山</a></li>
+                    <li role="presentation"><a href="#">恒山</a></li>
+                    <li role="presentation"><a href="#">嵩山</a></li>
+                    <li role="presentation"><a href="#">华山</a></li>
+                </ul>
+            </li>
+            <li class="active"><a href="#">票务信息</a></li>
+            <li><a href="#">旅游社区</a></li>
+            <li><a href="#">公司信息</a></li>
+        </ul>
+    </div>
+    <div>
+        <h1>8.动态标签</h1>
+        <ul class="nav nav-tabs nav-justified">
+            <li>
+                <a href="#home" data-toggle="tab">主页</a></li>
+            <li><a href="#scenery" data-toggle="tab">景点介绍</a></li>
+            <li class="active"><a href="#ticket" data-toggle="tab">票务信息</a></li>
+            <li><a href="#bbs" data-toggle="tab">旅游社区</a></li>
+            <li><a href="#about" data-toggle="tab">公司信息</a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="home" class="tab-pane active">
+                <h3>首页</h3>
+                <p>欢迎来到首页</p>
+            </div>
+            <div id="scenery" class="tab-pane">
+                <h3>风景</h3>
+                <p>江山如画，一时多少豪杰？</p>
+            </div>
+            <div id="ticket" class="tab-pane">
+                <h3>票务</h3>
+                <p>车水马龙，摩肩接踵</p>
+            </div>
+            <div id="bbs" class="tab-pane">
+                <h3>社区</h3>
+                <p>海内存知己，天涯若比邻。</p>
+            </div>
+            <div id="about" class="tab-pane">
+                <h3>公司信息</h3>
+                <p>不积跬步，无以至千里。</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
