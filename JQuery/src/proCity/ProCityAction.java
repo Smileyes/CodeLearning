@@ -23,7 +23,7 @@ import proCity.dao.IProDao;
  * @author Smileyes
  *
  */
-@Component
+@Controller
 @Scope("prototype")
 public class ProCityAction extends ActionSupport {
 	@Resource
